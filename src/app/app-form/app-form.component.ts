@@ -15,20 +15,26 @@ export class AppFormComponent implements OnInit {
       * @type {number}
      */
   // @Input() id: number;
-  // Variable
-  protected id: number = 1234;
-  protected newid: number = 5678;
-  // Déclaration d'un event (@Output) avec d'un Custom event (EventEmitter) avec un nom idEvent.
+  // Propriété
+  id: number = 789;
+  newid: number = 5678;
+
+  /*
+   *  Déclaration d'un event (@Output) avec d'un Custom event (EventEmitter) avec un nom idEvent.
+   *  idEvent est appelé par le parent. Et est transmis comme un Custom Event.
+   */
   @Output() idEvent = new EventEmitter<number>();
 
   constructor() { }
 
+  /*
+   *  A l'initialisation de l'app...
+   */
   ngOnInit() {
   }
-
-    /**
-     *   Envoye de la donnée vers le parent via un event.
-     */
+  /**
+   *   Envoye de la donnée vers le parent via un event.
+   */
   sendId() {
       this.idEvent.emit(this.newid);
       // mise à jour de l'id au click
