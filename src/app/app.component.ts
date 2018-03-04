@@ -16,10 +16,10 @@ export class AppComponent implements OnInit {
     constructor() {}
 
     /**
-     * Donnée appelé par le parent.
+     * Donnée appelé par le parent. Il est obligatoirement déclaré fonctionne sans mais peut causer des erreurs.
      * @type {number}
      */
-    id: number = 1324;
+    id: number;
 
     /**
      *   A l'initialisation de l'app
